@@ -1,18 +1,7 @@
-// TODO: Include packages needed for this application
+
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
-
-// THEN a high-quality, professional README.md is generated with the 
-// title of my project
-// and sections entitled Description,
-// Table of Contents,
-// Installation,
-// Usage, 
-// License, 
-// Contributing, 
-// Tests, 
-// and Questions
+const createReadMe = require('./utils/generateMarkdown');
 
 inquirer.prompt([
     {
@@ -67,4 +56,7 @@ inquirer.prompt([
         name: 'email',
     }, 
 ])
+.then((response)=>{
+    fs.writeFile('readme.md', createReadMe(response),(err)=> err ? console.error(err): console.log('Success, your file has been created'))
+});
 

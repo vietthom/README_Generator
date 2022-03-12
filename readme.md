@@ -1,27 +1,26 @@
-const createReadMe = (response)=>{
-  return `<div></div>
-  <h3 align="center">${response.project_title}</h3>
+<div></div>
+  <h3>readme generator</h3>
   
   ## Table of contents
-  *[Description]
-  *[Installation Instructions]
-  *[Usage]
-  *[License]
-  *[Contributors]
-  *[Testing]
-  *[Questions]
+  *[Description](#description)
+  *[Installation Instructions](#installation-instructions)
+  *[Usage](#usage)
+  *[License](#license)
+  *[Contributors](#contributors)
+  *[Testing](#testing)
+  *[Questions](#questions)
 
   ## Description
-  ${response.project_description}
+  This application allows the user to create a readme file in the command line by following the prompts provided. 
 
   ## Installation instructions
-  ${response.project_installation}
+  *Clone this directory *cd into the directory *Install all necessary node packages *start the application in the command line with node index.js
 
   ## Usage
-  ${response.project_usage}
+  From the command line, run the command: node index.js, follow the prompts and provide the appropriate answers to create your readme file. 
 
   ##License
-  ${(()=>{
+  ()=>{
     if(response.project_license == 'MIT License'){
       return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
         } else if(response.license === "GNU AGPLv3") {
@@ -39,18 +38,14 @@ const createReadMe = (response)=>{
         } else if(response.license === "The Unlicense") {
             return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`
     }
-  })
-}
+  }
 
 ## Contributors
-${response.project_contributors}
+None Applicable
 
 ## Testing 
-${response.project_test}
+None Applicable 
 
 ## Questions 
-Github: httpsL//github.com/${response.github}
-Email: ${response.email}
-`}
-
-module.exports = createReadMe;
+Github: httpsL//github.com/thomle0418
+Email: thomle0418@gmail.com
