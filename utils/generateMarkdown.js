@@ -1,15 +1,16 @@
 const createReadMe = (response)=>{
   return `<div></div>
-  <h3 align="center">${response.project_title}</h3>
+  <h3>${response.project_title}</h3>
   
   ## Table of contents
-  *[Description]
-  *[Installation Instructions]
-  *[Usage]
-  *[License]
-  *[Contributors]
-  *[Testing]
-  *[Questions]
+  * [Description](#description)
+  * [Installation Instructions](#installation-instructions)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributors](#contributors)
+  * [Testing](#testing)
+  * [Questions](#questions)
+  
 
   ## Description
   ${response.project_description}
@@ -20,10 +21,12 @@ const createReadMe = (response)=>{
   ## Usage
   ${response.project_usage}
 
-  ##License
-  ${(()=>{
-    if(response.project_license == 'MIT License'){
-      return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+  ## License
+
+  ${
+    (() => {
+        if(response.license == "MIT License") {
+            return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
         } else if(response.license === "GNU AGPLv3") {
             return `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`;
         } else if(response.license === "GNU GPLv3") {
@@ -38,8 +41,8 @@ const createReadMe = (response)=>{
             return `[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`
         } else if(response.license === "The Unlicense") {
             return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`
-    }
-  })
+        }
+    })()
 }
 
 ## Contributors
