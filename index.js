@@ -59,12 +59,12 @@ inquirer.prompt([
     {
         type: 'input',
         message: 'Please provide your GitHub username:',  
-        name: 'project_questions',
+        name: 'github',
     }, 
     {
         type: 'input',
         message: 'Please provide your email address:',  
-        name: 'project_questions',
+        name: 'email',
     }, 
 ])
 
